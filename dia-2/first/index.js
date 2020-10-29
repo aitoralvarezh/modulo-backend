@@ -13,3 +13,5 @@ const myarr2 = [28, 29]
 const myarrNoDups = lodash.uniq(myarr);
 
 console.log(myarrNoDups);
+
+// o usar npm run dev
