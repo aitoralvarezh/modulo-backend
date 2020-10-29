@@ -1,0 +1,19 @@
+{
+  "name": "hello-npm",
+  "version": "1.0.0",
+  "description": "mi primer programa en node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "./node_modules/.bin/nodemon",
+    "pepito": "echo Hola Don Pepito && exit"
+  
+  },
+  "author": "Aitor Alvarez",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.1.0",
+    "lodash": "^4.17.20",
+    "nodemon": "^2.0.6"
+  }
+}
