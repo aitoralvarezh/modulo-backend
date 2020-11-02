@@ -1,0 +1,9 @@
+{
+    "miclave": "mi valor",
+    "miclave2": "mi segundo valor",
+    "miclave3": 123,
+    "miclave4": {
+        "claveAnidada1": "valorAnidado",
+        "claveAnidada2": true
+    }
+}
