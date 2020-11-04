@@ -6,27 +6,34 @@
 const http = require('http');
 const server = http.createServer();
 const hostname = 'localhost';
-const port = 3000;
+
+const port = process.env.PORT;
+
 
 server.on('request', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
 
-    if (req.url === '/curso') {
-        res.statusCode = 200;
-        res.end(JSON.stringify({ Curso: 'Backend' }))
+    req.on('end', async () => {
 
-    } else if (req.url === '/message') {
-        res.statusCode = 200;
-        res.end(JSON.stringify({ message: 'Hello World' }))
-    } else {
-        res.statusCode = 404
-        res.setHeader('content-Type', 'text/plain');
-        res.end('Lo siento, no lo encuentro.');
+        body = buffer.concat(body).toString();
+        const { url, method } = req;
 
-        //res.end(JSON.stringify( { message: 'No lo encuentro'}))
-    }
+        if (req.url === '/curso') {
+            res.statusCode = 200;
+            res.end(JSON.stringify({ Curso: 'Backend' }))
+
+        } else if (req.url === '/message') {
+            res.statusCode = 200;
+            res.end(JSON.stringify({ message: 'Hello World' }))
+        } else {
+            res.statusCode = 404
+            res.setHeader('content-Type', 'text/plain');
+            res.end('Lo siento, no lo encuentro.');
+
+            //res.end(JSON.stringify( { message: 'No lo encuentro'}))
+        }
+    })
+
 })
 
-server.listen(port, hostname, () => {
-    console.log('server running');
-})
+server.listen(port)

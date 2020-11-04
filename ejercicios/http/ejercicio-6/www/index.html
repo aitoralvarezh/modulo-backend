@@ -1,0 +1,39 @@
+html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libro de visitas</title>
+</head>
+
+<body>
+  <header>
+    <h1>Libro de visitas</h1>
+  </header>
+
+  <section>
+    <h2>Deja tu mensaje</h2>
+    <form id="newmessage" action="http://localhost:3000/data">
+      <fieldset>
+        <label for="message">Mensaje</label>
+        <input type="text" name="message" id="message" required />
+      </fieldset>
+
+      <fieldset>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required />
+      </fieldset>
+
+      <button>Enviar</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Lista de mensajes</h2>
+    <ul id="messagelist"></ul>
+  </section>
+
+  <script type="module" src="/js/main.js"></script>
+
+</body>
+</html>
