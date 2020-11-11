@@ -6,3 +6,17 @@
 // usando un middleware.
 
 // (Lo mismo que en el ejemplo 2, pero usando un logger como morgan)
+
+const express = require('express');
+const morgan = require('morgan');
+const app = express();
+
+app.use(morgan())
+app.get('/hola', (req,res)=> {
+    res.send ({mensaje: 'hola mundo'})
+});
+app.get('/express', (req,res)=> {
+    res.send('Hola express')
+})
+
+app.listen(3000, ()=>console.log('escuchando'))
